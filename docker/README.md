@@ -3,7 +3,9 @@
 ## build
 
 ```shell
-$ docker build . -t FlandreDaisuki/leproxy
+$ docker build . -t flandre/leproxy
+# or
+$ docker-compose build
 ```
 
 ## run
@@ -22,8 +24,8 @@ If you want to use `localhost:port` directly, use following compose file:
 version: '3'
 services:
   leproxy:
-    # build: .
-    image: FlandreDaisuki/leproxy
+    build: .
+    image: flandre/leproxy
     container_name: leproxy
     network_mode: host
     ports:
