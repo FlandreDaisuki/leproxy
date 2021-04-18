@@ -1,0 +1,17 @@
+version: '3'
+services:
+  leproxy:
+    build: .
+    image: flandre/leproxy
+    container_name: leproxy
+    networks:
+      - leproxy_network
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./mapping.yml:/root/mapping.yml
+      - ./letsencrypt:/var/cache/letsencrypt
+networks:
+  leproxy_network:
+    external: true

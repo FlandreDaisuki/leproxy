@@ -1,0 +1,2 @@
+example.com: $GATEWAY_IP:8080
+#            ^^^^^^^^^^^ note: container gateway ip (`ip route show eth0` @ container)
